@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee with Cat</title>
+     <link rel="icon" href="./Images/About/branss.png" />
+    <meta name="description" content="Get your mind refreshed instantly with Coffee with Cat. Explore our signature hot and cold lovely garnished coffee blends. Order online now!">
+    <meta name="keywords" content="coffee, cafe, cat cafe, order coffee online, cold brew, cappuccino, coffee delivery">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="preloader" role="status" aria-label="Loading application">
+        <i class="fa-solid fa-cat loader-cup"></i>
+        <h2 style="color: var(--accent); margin-top: 20px;">Brewing fresh experiences...</h2>
+    </div>
+
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="#home" class="brand-logo" onclick="navigateToPage('home')">
+                <i class="fa-solid fa-mug-hot"></i> Coffee with Cat
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link-item active" onclick="navigateToPage('home')">Home</a></li>
+                <li><a href="#menu" class="nav-link-item" onclick="navigateToPage('menu')">Menu</a></li>
+                <li><a href="#about" class="nav-link-item" onclick="navigateToPage('about')">About Us</a></li>
+                <li><a href="#gallery" class="nav-link-item" onclick="navigateToPage('gallery')">Gallery</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggleBtn" class="icon-btn" aria-label="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="icon-btn" aria-label="Open Shopping Cart" onclick="navigateToPage('cart')">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-badge" id="cartBadgeCount">0</span>
+                </button>
+                <button class="hamburger icon-btn" id="hamburgerMenuBtn" aria-label="Toggle Mobile Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="home" class="page-section active-page">
+            <div id="home-hero">
+                <div class="hero-content">
+                    <div class="stage-3d">
+                        <div class="shipper-3d"> <img src="./Images/About/branss.png" alt=""> </div>
+                    </div>
+                    <h1>Purr-fectly Roasted,<br>Lovely Garnished Coffee</h1>
+                    <p>It is a pure natural coffee brand where your mind gets fully refreshed after getting a ship of our cold and hot lovely decorated coffee creations.</p>
+                    <a href="#menu" class="btn-primary" onclick="navigateToPage('menu')">Order Fresh Brew Now</a>
+                </div>
+            </div>
+
+            <div class="container fade-in-element">
+                <div class="section-header">
+                    <h2>Why Coffee with Cat?</h2>
+                </div>
+                <div class="grid-layout">
+                    <div class="coffee-card" style="padding: 30px; text-align: center;">
+                        <i class="fa-solid fa-leaf" style="font-size: 3rem; color: var(--accent); margin-bottom: 15px;"></i>
+                        <h3>100% Pure Natural</h3>
+                        <p>Sourced ethically directly from cloud forest estates where organic coffee thrives naturally.</p>
+                    </div>
+                    <div class="coffee-card" style="padding: 30px; text-align: center;">
+                        <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 3rem; color: var(--accent); margin-bottom: 15px;"></i>
+                        <h3>Lovely Garnished</h3>
+                        <p>Every single cup is custom garnished with beautiful edible art to bring a huge smile to your face.</p>
+                    </div>
+                    <div class="coffee-card" style="padding: 30px; text-align: center;">
+                        <i class="fa-solid fa-bolt" style="font-size: 3rem; color: var(--accent); margin-bottom: 15px;"></i>
+                        <h3>Instant Mind Refresh</h3>
+                        <p>Engineered uniquely to wake your creative senses up and make you energetic instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Refreshing Menu</h2>
+                    <p style="color: var(--text-muted);">Pick your favorite ship to completely unlock freshness</p>
+                </div>
+
+                <div class="menu-filters">
+                    <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+                    <button class="filter-btn" onclick="filterProducts('hot')">Hot Coffee</button>
+                    <button class="filter-btn" onclick="filterProducts('cold')">Cold Coffee</button>
+                </div>
+
+                <div class="grid-layout" id="productsGridContainer">
+                    </div>
+            </div>
+        </section>
+
+        <section id="about" class="page-section">
+            <div class="container fade-in-element">
+                <div class="about-wrapper">
+                    <div class="about-img">
+                        <img src="./Images/About/Coffee.jpg" alt="Beautifully garnished hot artisan coffee latte cup">
+                    </div>
+                    <div class="about-text">
+                        <h3>Best Roast Level Of Black Coffee Drinks</h3>
+                        <p><span style="font-size: 12px;">
+                              <strong>Medium Roast (The Balanced All-Rounder)</strong><br>
+                              <strong>The Taste:</strong> Sweet, smooth, and highly approachable. It retains delicate caramel and chocolate notes without the aggressive bitterness of darker roasts.<br>
+                              <strong>The Experience:</strong> It balances acidity and bitterness perfectly. It is highly recommended for beginners exploring black coffee.<br>
+                              <strong>Best Methods:</strong> Pour-Over, Drip Coffee, and French Press.<br>
+                              <strong>Light Roast (The Fruit-Forward Pick)</strong><br>
+                              <strong>The Taste:</strong> Bright, lively, and highly complex. It preserves the unique "origin characteristics" (such as floral, berry, or citrusy notes).<br>
+                              <strong>The Experience:</strong> It has a lighter body, higher acidity, and can sometimes taste like black tea.<br>
+                              <strong>Best Methods:</strong> Pour-Over and Cold Brew.<br>
+                              <strong>Dark Roast (The Bold & Intense Drink)</strong><br>
+                              <strong>The Taste:</strong> Heavy-bodied with rich, smoky, and bittersweet notes (like dark chocolate and molasses).<br>
+                              <strong>The Experience:</strong> It has very low acidity and relies more on the roasting process for flavor rather than the bean's origin.<br>
+                              <strong>Best Methods:</strong> Espresso, Moka Pot, or strong black Americanos.<br>
+                           </span>
+                      </p>
+                    </div>
+                </div>
+                <br>
+                <div class="about-wrapper">
+                    <div class="about-img">
+                        <img src="./Images/About/How to Make the Perfect Doppio.jpg" alt="Beautifully garnished hot artisan coffee latte cup">
+                    </div>
+                    <div class="about-text">
+                        <h3>How to Make the Perfect Doppio</h3>
+                         <p><span style="font-size: 12px;"><strong>Step 1: Prep and Preheat</strong><br>
+                            Warm the Cup:A cold cup will rapidly pull heat from your espresso. Rinse your 100cc demitasse cup with hot water and dry it before extraction.<br>
+                            Fresh Beans: Choose freshly roasted, high-quality beans and grind them just prior to brewing to maintain their peak aromatics.<br>
+                            Dosing: Weigh out exactly 18 to 20 grams of finely ground coffee.<br>
+                         <strong>Step 2: Distribution and Tamping</strong><br>
+                           Even Distribution: Level the grinds in your dry portafilter to prevent channelling or uneven water flow.<br>
+                           Firm Tamp: Hold your tamper straight (like a door handle) and press straight down evenly. Avoid twisting or polishing, as this can fracture the puck and affect the flow.<br>
+                        <strong>Step 3: Extraction</strong><br>
+                           Pull the Shot: Lock in the portafilter and start the extraction over your pre-warmed cup.
+                           Monitor the Time: Keep a close eye on the clock. The entire process should take 25 to 35 seconds. If it drips too quickly (under 20 seconds), your grind is too coarse; if it takes too long or chokes the machine, your grind is too fine.<br>
+                           Yield: You are aiming for a brew ratio of about 1:2 (e.g., 19 g of grounds producing 38 g of liquid espresso, but up to 50 g is acceptable).<br>
+                        <strong>Step 4: Serving</strong><br>
+                          Serve Immediately:A fresh doppio tastes best right off the machine, featuring a rich, golden crema.<br>
+                          Stir Before Drinking: Stirring your doppio briefly with a clean spoon integrates the crema and the body of the espresso, balancing the flavor profile.</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Visual Coffee Gallery</h2>
+                    <p style="color: var(--text-muted);">Click on any image below to zoom into our garnished art world</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Beanss.jpg')">
+                        <img src="./Images/Gallery/Beanss.jpg" alt="Beautifully textured latte art foam">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/blend.jpg')">
+                        <img src="./Images/Gallery/blend.jpg" alt="Assorted hot coffee cups on table">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Bond.jpg')">
+                        <img src="./Images/Gallery/Bond.jpg" alt="Assorted hot coffee cups on table">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Brewing Up.jpg')">
+                        <img src="./Images/Gallery/Brewing Up.jpg" alt="Assorted hot coffee cups on table">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Coffee Bean.jpg')">
+                        <img src="./Images/Gallery/Coffee Bean.jpg" alt="Assorted hot coffee cups on table">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/coffee time.jpg')">
+                        <img src="./Images/Gallery/coffee time.jpg" alt="Assorted hot coffee cups on table">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Coffee ☕️.jpg')">
+                        <img src="./Images/Gallery/Coffee ☕️.jpg" alt="Assorted hot coffee cups on table">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Coffee.jpg')">
+                        <img src="./Images/Gallery/Coffee.jpg" alt="Assorted hot coffee cups on table">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/coffees.jpg')">
+                        <img src="./Images/Gallery/coffees.jpg" alt="Assorted hot coffee cups on table">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Cup Plate.jpg')">
+                        <img src="./Images/Gallery/Cup Plate.jpg" alt="Assorted hot coffee cups on table">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Cute Caramel.jpg')">
+                        <img src="./Images/Gallery/Cute Caramel.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Cute Coffee.jpg')">
+                        <img src="./Images/Gallery/Cute Coffee.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Espresso Amargo.jpg')">
+                        <img src="./Images/Gallery/Espresso Amargo.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Formula.jpg')">
+                        <img src="./Images/Gallery/Formula.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Ghost.jpg')">
+                        <img src="./Images/Gallery/Ghost.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Iced A.jpg')">
+                        <img src="./Images/Gallery/Iced A.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Iced Coffee Girly.jpg')">
+                        <img src="./Images/Gallery/Iced Coffee Girly.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Love coff.jpg')">
+                        <img src="./Images/Gallery/Love coff.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Love time.jpg')">
+                        <img src="./Images/Gallery/Love time.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Minuature.jpg')">
+                        <img src="./Images/Gallery/Minuature.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Blend A.jpg')">
+                        <img src="./Images/Gallery/Blend A.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Perfect Flat.jpg')">
+                        <img src="./Images/Gallery/Perfect Flat.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Process.jpg')">
+                        <img src="./Images/Gallery/Process.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Sacks.jpg')">
+                        <img src="./Images/Gallery/Sacks.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Stack.jpg')">
+                        <img src="./Images/Gallery/Stack.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Tosts.jpg')">
+                        <img src="./Images/Gallery/Tosts.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./Images/Gallery/Watercolor.jpg')">
+                        <img src="./Images/Gallery/Watercolor.jpg" alt="Iced refreshing caramel coffee swirl">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Your Shopping Cart</h2>
+                </div>
+                <div class="cart-container">
+                    <div id="cartContentWrapper">
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxActiveImg" alt="Enlarged gallery display preview">
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Coffee with Cat</h4>
+                <p>Premium pure natural coffee brand bringing extreme freshness to your tired mind.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" aria-label="Visit Facebook profile"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Visit Instagram feed"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Visit Twitter feed"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="Visit LinkedIn profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://snapchat.com" target="_blank" aria-label="Visit Snapchat profile"><i class="fa-brands fa-snapchat"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="#home" onclick="navigateToPage('home')">Home</a></li>
+                    <li><a href="#menu" onclick="navigateToPage('menu')">Menu</a></li>
+                    <li><a href="#about" onclick="navigateToPage('about')">Our Story</a></li>
+                    <li><a href="#gallery" onclick="navigateToPage('gallery')">Gallery Art</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <p>Monday - Friday: 7:00 AM - 9:00 PM<br>Saturday - Sunday: 8:00 AM - 10:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-envelope"></i> copycat268@gmail.com<br><i class="fa-solid fa-phone"></i> +91 9876543210<br><i class="fa-solid fa-location-dot"></i> Baily Road, Patna, Bihar</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Coffee with Cat. Designed for thrust 😋. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
